@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang ="uk">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Copatible" content="IE=edge">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodWagon - Смачна доставка</title>
+    <meta rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">FoodWagon</a>
+            <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Відкрити меню">
+                <span class="burger"></span>
+            </button>
+            <nav id="primary-nav" class="primary-nav" aria-label="Головне меню">
+                <ul class="nav-list">
+                    <li><a href="#menu">Меню</a></li>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="orderBtn" class="btn btn-primary">Замовити</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home" role="region" aria-label="Головна секція">
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <h1>Свіжа їжа - прямо до ваших дверей</h1>
+                    <p>Швидка доставка у вашому районі. Смачні набори, акції щодня</p>
+                    <div class="hero-cta">
+                        <button id="orderNow" class="btn btn-primary">Замовити зараз</button>
+                        <a href="#menu" class="btn btn-ghost">Переглянути меню</a>
+                    </div>
+                </div>
+                <div class="hero-media">
+                    <img src="images/hero.jpg" alt="Блюдо FoodWagon" width="600" height="420">
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="section-container">
+            <header class="section-container">
+                <h2>Популярні страви</h2>
+                <p>Обирайте з найпопулярніших позицій у нашому меню.</p>
+            </header>
+            <div id="products" class="products-grid" role="list"></div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container about-inner">
+                <div class="about-text">
+                    <h2>Про FoodWagon</h2>
+                    <p>Місія FoodWagon - доставляти гарячі і свіжі страви у максимально короткий термін. Ми прицюємо щодня, щоб Ваше замовлення було ідеальним.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="Команда FoodWagon" width="500" height="320">
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section-gallery">
+            <div class="container">
+                <header class="section-header">
+                    <h2>Галерея</h2>
+                    <p>Деякі фото наших страв та доставки.</p>
+                </header>
+                <div class="gallery-wrap">
+                    <button class="gallery-btn prev" aria-label="Попереднє">‹</button>
+                    <div class="gallery-track" id="galleryTrack" role="list">
+                        <img src="images/gallery-1.jpg" alt="Галерея 1" width="380" height="260">
+                        <img src="images/gallery-2.jpg" alt="Галерея 2" width="380" height="260">
+                        <img src="images/gallery-3.jpg" alt="Галерея 3" width="380" height="260">
+                    </div>
+                    <button class="gallery-btn next" aria-label="Наступне">›</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container contact-inner">
+                <div class="contact-card">
+                    <h2>Контакти</h2>
+                    <p>Телефон - <a href="tel:+380993619227">+380 993-61-92-27</a></p>
+                    <p>Адреса: Клубівці, Стародорожна 43</p>
+                </div>
+                <form id="contactForm" class="contact-form" action="#" method="post" novalidate>
+                    <h3>Зворотній зв'язок</h3>
+                    <label for="name">Ім'я</label>
+                    <input id="name" name="name" type="text" required>
+                    <label for="phone">Телефон</label>
+                    <input id="phone" name="phone" type="tel" required>
+                    <label for="message">Повідомлення</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button class="btn btn-primary" type="submit">Надіслати</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2025 FoodWagon. Всі права захищені.</p>
+            <ul class="social-list" aria-label="Соціальні мережі">
+                <li><a href="#"><img src="icons/facebook.svg" alt="facebook" width="24" height="24"></a></li>
+                <li><a href="#"><img src="icons/instagram.svg" alt="instagram" width="24" height="24"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-overlay" data-close="true"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Закрити" data-close="true">×</button>
+            <h2>замовлення</h2>
+            <form id="orderForm" action="#" method="post" novalidate>
+                <label for="o-name">Ім'я</label>
+                <input id="o-name" name="o-name" type="text" required>
+                <label for="o-adress"Адреса></label>
+                <input id="o-adress" name="o-adress" type="text" required>
+                <label for="o-phone">Телефон</label>
+                <input id="o-phone" name="o-phone" type="tel" required>
+                <button class="btn btn-primary" type="submit"Підтрвердити></button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
