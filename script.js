@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 
   var productsList=document.getElementById('products');
-  var products=[
-    {id:1,name:'Бургер класичний',desc:'Соковитий яловичий бургер з сиром',price:'149 грн',img:'images/product-1.jpg'},
-    {id:2,name:'Піца Маргарита',desc:'Тонка основа, соус помідор, моцарела',price:'199 грн',img:'images/product-2.jpg'},
-    {id:3,name:'Сет з куркою',desc:'Набір з курячих крилець та соусів',price:'249 грн',img:'images/product-3.jpg'},
-    {id:4,name:'Салат місцевий',desc:'Зелень, овочі та соус власного рецепту',price:'99 грн',img:'images/product-4.jpg'}
-  ];
+var products=[
+    {id:1,name:'Бургер класичний',desc:'Соковитий яловичий бургер з сиром',price:'149 грн',img:'images/burger.jpg'},
+    {id:2,name:'Піца Маргарита',desc:'Тонка основа, соус помідор, моцарела',price:'199 грн',img:'images/pizza-margarita.jpg'},
+    {id:3,name:'Сет з куркою',desc:'Набір з курячих крилець та соусів',price:'249 грн',img:'images/chicken-set.jpg'},
+    {id:4,name:'Салат місцевий',desc:'Зелень, курка, овочі та соус власного рецепту',price:'99 грн',img:'images/salad.jpg'}
+];
   function renderProducts(){
     productsList.innerHTML='';
     products.forEach(function(p){
