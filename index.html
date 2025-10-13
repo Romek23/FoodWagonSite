@@ -7,6 +7,7 @@
     <title>FoodWagon - Смачна доставка</title>
     <meta rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=aries=places"></script>
 </head>
 <body>
     <header class="site-header">
@@ -17,7 +18,7 @@
             </button>
             <nav id="primary-nav" class="primary-nav" aria-label="Головне меню">
                 <ul class="nav-list">
-                    <li><a href="#menu">Меню</a></li>
+                    <li><a href="menu.html">Меню</a></li>
                     <li><a href="#about">Про нас</a></li>
                     <li><a href="#gallery">Галерея</a></li>
                     <li><a href="#contact">Контакти</a></li>
@@ -70,20 +71,48 @@
             <div class="container">
                 <header class="section-header">
                     <h2>Галерея</h2>
-                    <p>Деякі фото наших страв та доставки.</p>
+                    <p>Деякі фото наших страв та закладів.</p>
                 </header>
                 <div class="gallery-wrap">
                     <button class="gallery-btn prev" aria-label="Попереднє">‹</button>
                     <div class="gallery-track" id="galleryTrack" role="list">
-                        <img src="images/gallery-1.jpg" alt="Галерея 1" width="380" height="260">
-                        <img src="images/gallery-2.jpg" alt="Галерея 2" width="380" height="260">
-                        <img src="images/gallery-3.jpg" alt="Галерея 3" width="380" height="260">
+                        <img src="images/gallery-1.jpg" alt="Галерея 1" width="150" height="100">
+                        <img src="images/gallery-2.jpg" alt="Галерея 2" width="150" height="100">
+                        <img src="images/gallery-3.jpg" alt="Галерея 3" width="150" height="100">
+                        <img src="images/gallery-4.jpg" alt="Галерея 4" width="150" height="100">
                     </div>
                     <button class="gallery-btn next" aria-label="Наступне">›</button>
+                    <div class="gallery-progress" id="galleryProgress"></div>
                 </div>
             </div>
         </section>
 
+        <section id="quick-order" class="section quick-order">
+            <div class="container">
+                <header class="section-header">
+                    <div class="section-icon">🚀</div>
+                    <h2>Швидке замовлення</h2>
+                    <p>Ми автоматично визначимо вашу адресу для швидкої доставки</p>
+                </header>
+                <div class="quick-order-widget">
+                    <div class="location-status" id="locationStatus">
+                        <div class="status-icon">📍</div>
+                        <div class="status-text">Натисніть кнопку нижче, щоб визначити ваше місцезнаходження</div>
+                    </div>
+                    <button id="detectLocation" class="btn btn-primary location-btn">
+                        📍 Використати моє місцезнаходження
+                    </button>
+                    <div id="locationResult" class="location-result"></div>
+                    
+                    <div class="quick-order-form" id="quickOrderForm" style="display: none;">
+                        <h3>Ваша адреса:</h3>
+                        <div class="confirmed-address" id="confirmedAddress"></div>
+                        <button id="confirmOrder" class="btn btn-primary">Замовити за цією адресою</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
         <section id="contact" class="section contact">
             <div class="container contact-inner">
                 <div class="contact-card">
@@ -109,8 +138,8 @@
         <div class="container footer-inner">
             <p>&copy; 2025 FoodWagon. Всі права захищені.</p>
             <ul class="social-list" aria-label="Соціальні мережі">
-                <li><a href="#"><img src="icons/facebook.svg" alt="facebook" width="24" height="24"></a></li>
-                <li><a href="#"><img src="icons/instagram.svg" alt="instagram" width="24" height="24"></a></li>
+                <li><a href="#"><img src="icons/facebook.png" alt="facebook" width="24" height="24"></a></li>
+                <li><a href="#"><img src="icons/instagram.png" alt="instagram" width="24" height="24"></a></li>
             </ul>
         </div>
     </footer>
@@ -119,15 +148,21 @@
         <div class="modal-overlay" data-close="true"></div>
         <div class="modal-content" role="document">
             <button class="modal-close" aria-label="Закрити" data-close="true">×</button>
-            <h2>замовлення</h2>
+            <h2>Оформлення замовлення</h2>
             <form id="orderForm" action="#" method="post" novalidate>
-                <label for="o-name">Ім'я</label>
-                <input id="o-name" name="o-name" type="text" required>
-                <label for="o-adress"Адреса></label>
-                <input id="o-adress" name="o-adress" type="text" required>
-                <label for="o-phone">Телефон</label>
-                <input id="o-phone" name="o-phone" type="tel" required>
-                <button class="btn btn-primary" type="submit"Підтрвердити></button>
+                <div class="form-group">
+                    <label for="o-name">👤 Ім'я</label>
+                    <input id="o-name" name="o-name" type="text" placeholder="Введіть ваше ім'я" required>
+                </div>
+                <div class="form-group">
+                    <label for="o-adress">📍 Адреса доставки</label>
+                    <input id="o-adress" name="o-adress" type="text" placeholder="Введіть адресу доставки" required>
+                </div>
+                <div class="form-group">
+                    <label for="o-phone">📞 Телефон</label>
+                    <input id="o-phone" name="o-phone" type="tel" placeholder="+380 XX XXX XX XX" required>
+                </div>
+                <button class="btn btn-primary" type="submit">🚀 Підтвердити замовлення</button>
             </form>
         </div>
     </div>

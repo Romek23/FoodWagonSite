@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Copatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <title>Меню - FoodWagon</title>
+        <link rel="icon" type="image/png" href="logo.png">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">FoodWagon</a>
+            <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Відкрити меню">
+                <span class="burger"></span>
+            </button>
+            <nav id="primary-nav" class="primary-nav" aria-label="Головне меню">
+                <ul class="nav-list">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="menu.html" class="active">Меню</a></li>
+                    <li><a href="index.html#about">Про нас</a></li>
+                    <li><a href="index.html#gallery">Галерея</a></li>
+                    <li><a href="index.html#contact">Контакти</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="orderBtn" class="btn btn-primary">Замовити</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero menu-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Наше меню</h1>
+                    <p>Смачні страви з найсвіжіших інгредієнтів</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="menu-categories">
+            <button class="category-btn active" data-category="all">Всі страви</button>
+            <button class="category-btn" data-category="burgers">Бургери</button>
+            <button class="category-btn" data-category="pizza">Піца</button>
+            <button class="category-btn" data-category="chicken">Курка</button>
+            <button class="category-btn" data-category="salads">Салати</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+       
+        </div>
+
+        <section class="section menu-section">
+            <div class="container">
+                <div id="products" class="products-grid" role="list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2025 FoodWagon. Всі права захищені.</p>
+            <ul class="social-list" aria-label="Соціальні мережі">
+                <li><a href="#"><img src="icons/facebook.png" alt="facebook" width="24" height="24"></a></li>
+                <li><a href="#"><img src="icons/instagram.png" alt="instagram" width="24" height="24"></a></li>
+            </ul>
+        </div>
+    </footer>
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-overlay" data-close="true"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Закрити" data-close="true">×</button>
+            <h2>Оформлення замовлення</h2>
+            <form id="orderForm" action="#" method="post" novalidate>
+                <div class="form-group">
+                    <label for="o-name">👤 Ім'я</label>
+                    <input id="o-name" name="o-name" type="text" placeholder="Введіть ваше ім'я" required>
+                </div>
+                <div class="form-group">
+                    <label for="o-adress">📍 Адреса доставки</label>
+                    <input id="o-adress" name="o-adress" type="text" placeholder="Введіть адресу доставки" required>
+                </div>
+                <div class="form-group">
+                    <label for="o-phone">📞 Телефон</label>
+                    <input id="o-phone" name="o-phone" type="tel" placeholder="+380 XX XXX XX XX" required>
+                </div>
+                <button class="btn btn-primary" type="submit">🚀 Підтвердити замовлення</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+    <script src="menu.js" defer></script>
+    </body>
+</html>
