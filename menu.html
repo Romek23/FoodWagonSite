@@ -27,6 +27,12 @@
                     <button id="orderBtn" class="btn btn-primary">Замовити</button>
                 </div>
             </nav>
+            <div class="nav-actions">
+                <a href="cart.html" class="cart-icon">
+                    🛒
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -39,24 +45,19 @@
                 </div>
             </div>
         </section>
-
-        <div class="menu-categories">
-            <button class="category-btn active" data-category="all">Всі страви</button>
-            <button class="category-btn" data-category="burgers">Бургери</button>
-            <button class="category-btn" data-category="pizza">Піца</button>
-            <button class="category-btn" data-category="chicken">Курка</button>
-            <button class="category-btn" data-category="salads">Салати</button>
-        </div>
-
-        <div class="menu-grid" id="menuGrid">
-       
-        </div>
-
         <section class="section menu-section">
             <div class="container">
-                <div id="products" class="products-grid" role="list"></div>
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="all">Всі страви</button>
+                    <button class="category-btn" data-category="burgers">Бургери</button>
+                    <button class="category-btn" data-category="pizza">Піца</button>
+                    <button class="category-btn" data-category="chicken">Курка</button>
+                    <button class="category-btn" data-category="salads">Салати</button>
+                </div>
+                <div class="menu-grid" id="menuGrid"></div>
             </div>
         </section>
+
     </main>
 
     <footer class="site-footer">

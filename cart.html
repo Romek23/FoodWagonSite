@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кошик - FoodWagon</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">FoodWagon</a>
+            <button class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Відкрити меню">
+                <span class="burger"></span>
+            </button>
+            <nav id="primary-nav" class="primary-nav" aria-label="Головне меню">
+                <ul class="nav-list">
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="menu.html">Меню</a></li>
+                    <li><a href="index.html#about">Про нас</a></li>
+                    <li><a href="index.html#gallery">Галерея</a></li>
+                    <li><a href="index.html#contact">Контакти</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="cart.html" class="cart-icon active">
+                        🛒
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button id="orderBtn" class="btn btn-primary">Замовити</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero cart-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Ваше замовлення</h1>
+                    <p>Перевірте товари та оберіть спосіб оплати</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cart-section">
+            <div class="container">
+                <div class="cart-layout">
+                    
+                    <div class="cart-items">
+                        <h2>Товари в кошику</h2>
+                        <div id="cartItemsList" class="cart-items-list">
+                           
+                        </div>
+                    </div>
+
+                   
+                    <div class="cart-summary">
+                        <div class="summary-card">
+                            <h3>Підсумок замовлення</h3>
+                            
+                            <div class="summary-details">
+                                <div class="summary-row">
+                                    <span>Товари:</span>
+                                    <span id="itemsTotal">0 грн</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Доставка:</span>
+                                    <span id="deliveryCost">50 грн</span>
+                                </div>
+                                <div class="summary-divider"></div>
+                                <div class="summary-row total">
+                                    <span>Всього:</span>
+                                    <span id="totalCost">50 грн</span>
+                                </div>
+                            </div>
+
+                        
+                            <div class="payment-methods">
+                                <h4>Спосіб оплати</h4>
+                                <div class="payment-options">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="cash" checked>
+                                        <span>💵 Готівкою</span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="card">
+                                        <span>💳 Карткою</span>
+                                    </label>
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="online">
+                                        <span>📱 Онлайн</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button id="checkoutBtn" class="btn btn-primary checkout-btn">
+                                🚀 Перейти до оформлення
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="addressModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-overlay" data-close="true"></div>
+        <div class="modal-content" role="document">
+            <button class="modal-close" aria-label="Закрити" data-close="true">×</button>
+            <h2>Адреса доставки</h2>
+            <form id="addressForm" action="#" method="post" novalidate>
+                <div class="form-group">
+                    <label for="delivery-address">📍 Адреса доставки</label>
+                    <input id="delivery-address" name="delivery-address" type="text" 
+                           placeholder="Введіть повну адресу доставки" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery-notes">📝 Примітки для кур'єра</label>
+                    <textarea id="delivery-notes" name="delivery-notes" rows="3" 
+                              placeholder="Поверх, код від дверей, тощо..."></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">✅ Підтвердити замовлення</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2025 FoodWagon. Всі права захищені.</p>
+            <ul class="social-list" aria-label="Соціальні мережі">
+                <li><a href="#"><img src="icons/facebook.png" alt="facebook" width="24" height="24"></a></li>
+                <li><a href="#"><img src="icons/instagram.png" alt="instagram" width="24" height="24"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="cart.js" defer></script>
+</body>
+</html>
